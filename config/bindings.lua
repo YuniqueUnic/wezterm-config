@@ -49,14 +49,18 @@ local keys = {
    },
 
    -- cursor movement --
-   { key = 'LeftArrow',  mods = mod.SUPER,     action = act.SendString '\u{1b}OH' },
-   { key = 'RightArrow', mods = mod.SUPER,     action = act.SendString '\u{1b}OF' },
+   { key = 'w',     mods = mod.SUPER,     action = act.SendKey({ mods = "CTRL", key = "w" }) },
+   { key = 'LeftArrow',  mods = mod.SUPER,     action = act.SendKey({mods = "ALT", key = "b"}) },
+   { key = 'RightArrow', mods = mod.SUPER,     action = act.SendKey({mods = "ALT", key = "f"}) },
    { key = 'Backspace',  mods = mod.SUPER,     action = act.SendString '\u{15}' },
+    { key = 'LeftArrow',  mods = 'ALT',    action = act.SendString '\u{1b}OH' },
+   { key = 'RightArrow',  mods = 'ALT',     action = act.SendString '\u{1b}OF' },
 
    -- copy/paste --
    { key = 'c',          mods = 'CTRL|SHIFT',  action = act.CopyTo('Clipboard') },
    { key = 'v',          mods = 'CTRL|SHIFT',  action = act.PasteFrom('Clipboard') },
-
+   { key = 'c',          mods =  mod.SUPER,  action = act.CopyTo('Clipboard') },
+   { key = 'v',          mods =  mod.SUPER, action = act.PasteFrom('Clipboard') },
    -- tabs --
    -- tabs: spawn+close
    { key = 't',          mods = mod.SUPER,     action = act.SpawnTab('DefaultDomain') },
@@ -177,7 +181,6 @@ local keys = {
 
    -- panes: zoom+close pane
    { key = 'Enter', mods = mod.SUPER,     action = act.TogglePaneZoomState },
-   { key = 'w',     mods = mod.SUPER,     action = act.CloseCurrentPane({ confirm = false }) },
 
    -- panes: navigation
    { key = 'k',     mods = mod.SUPER_REV, action = act.ActivatePaneDirection('Up') },
@@ -250,7 +253,7 @@ local mouse_bindings = {
 return {
    disable_default_key_bindings = true,
    -- disable_default_mouse_bindings = true,
-   leader = { key = 'Space', mods = mod.SUPER_REV },
+   leader = { key = ';', mods = mod.SUPER_REV },
    keys = keys,
    key_tables = key_tables,
    mouse_bindings = mouse_bindings,

@@ -39,10 +39,10 @@ local colorscheme = {
    selection_fg = mocha.text,
    ansi = {
       '#0C0C0C', -- black
-      '#C50F1F', -- red
+      '#f38ba8', -- red
       '#13A10E', -- green
       '#C19C00', -- yellow
-      '#0037DA', -- blue
+      '#89b4fa', -- blue
       '#881798', -- magenta/purple
       '#3A96DD', -- cyan
       '#CCCCCC', -- white
